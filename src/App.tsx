@@ -2,7 +2,9 @@ function App() {
 
   return (
     <>
-      <h1>Consumina</h1>
+      <header >
+        <h1>Consumina</h1>
+      </header>
     </>
   )
 }
