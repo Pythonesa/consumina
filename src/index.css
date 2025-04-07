@@ -97,6 +97,15 @@ ul{
     font-size: 1.3rem;
 }
 
+#propina h2{
+    color: chocolate;
+}
+
+#propina {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #000;
+}
+
 .orderItem{
     display: flex;
     flex-direction: row;
@@ -127,6 +136,11 @@ ul{
     border-color: #fff;
     box-shadow: 1px 1px 1px #fff;
     color:#fff;
+}
+
+#propina > div{
+    width: fit-content;
+    text-align: end;
 }
 
 @media (max-width: 43rem){
