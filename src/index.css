@@ -1,0 +1,6 @@
+:root{
+    background-image: url(/img/background.png);
+    background-repeat: repeat;
+    background-color: rgb(95, 93, 93);
+    background-attachment: fixed;
+}
