@@ -1,10 +1,11 @@
 import { MenuItem } from "./components/MenuItem";
+import { OrderContents } from "./components/OrderContents";
 import { menuItems } from "./data/fakeDB";
 import useOrder from "./hooks/useOrder";
 
 
 function App() {
-  const { addToOrder } = useOrder()
+  const { addToOrder, order } = useOrder()
   return (
     <>
       <header>
@@ -22,6 +23,7 @@ function App() {
         </div>
         <div id="cart">
           <h2>Orden</h2>
+          <OrderContents order={order} />
         </div>
       </main>
     </>
