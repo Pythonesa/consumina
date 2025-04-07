@@ -1,7 +1,10 @@
 import { MenuItem } from "./components/MenuItem";
 import { menuItems } from "./data/fakeDB";
+import useOrder from "./hooks/useOrder";
+
 
 function App() {
+  const { addToOrder } = useOrder()
   return (
     <>
       <header>
@@ -13,7 +16,7 @@ function App() {
           <h2>Menu</h2>
           <ul>
             {menuItems.map((item) => (
-              <MenuItem key={item.id} item={item} />
+              <MenuItem key={item.id} item={item} addItem={() => addToOrder(item)} />
             ))}
           </ul>
         </div>
