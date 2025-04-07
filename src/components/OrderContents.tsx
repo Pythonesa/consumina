@@ -3,8 +3,9 @@ import type { ComponentProps } from "react";
 
 type OrderContentsProps = ComponentProps<"ul"> & {
   order: OrderItem[];
+  removeFromOrder: (item: OrderItem) => void;
 }
-export const OrderContents = ({order}: OrderContentsProps) => {
+export const OrderContents = ({order, removeFromOrder}: OrderContentsProps) => {
   if (order.length === 0) {
     return <p>La orden esta vacía</p>;
   } else {
@@ -16,7 +17,7 @@ export const OrderContents = ({order}: OrderContentsProps) => {
               <p>{item.name} - ${item.price}</p>
               <p>Cantidad: {item.quantity} - ${item.price * item.quantity}</p>
             </div>
-            <button>X</button>
+            <button onClick={() => removeFromOrder(item)}>X</button>
           </li>
         ))}
       </ul>

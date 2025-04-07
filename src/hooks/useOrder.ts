@@ -14,8 +14,15 @@ export default function useOrder() {
     setOrder(newOrder);
   };
 
+  const removeFromOrder = (item: OrderItem) => {
+    const newOrder = [...order];
+    newOrder.splice(newOrder.findIndex((i) => i.id === item.id), 1);
+    setOrder(newOrder);
+  };
+
   return {
-    addToOrder,
     order,
+    addToOrder,
+    removeFromOrder,
   };
 }
