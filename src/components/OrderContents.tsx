@@ -12,6 +12,18 @@ export const OrderContents = ({
   if (order.length === 0) {
     return <p>La orden esta vacía</p>;
   } else {
+    //TODO: Subtotal, Tip & Total section
+    const subtotal : number = order.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const radioButtons = document.querySelectorAll('input[name="propina"]');
+    let percent = 0;
+    for (const radioButton of radioButtons) {
+      if ((radioButton as HTMLInputElement).checked) {
+        percent = parseInt((radioButton as HTMLInputElement).value);
+        break;
+      }
+    }
+    const propina : number = subtotal * percent;
+    const total : number = subtotal + propina;
     return (
       <>
         <ul>
