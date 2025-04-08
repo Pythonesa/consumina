@@ -70,6 +70,7 @@ export const OrderContents = ({
         <p>Subtotal: ${subtotal.toFixed(2)}</p>
         <p>Propina: ${tip.toFixed(2)}</p>
         <p>Total: ${total.toFixed(2)}</p>
+        <button id="sendOrderButton">Enviar orden y pagar</button>
       </div>
     </>
   );
